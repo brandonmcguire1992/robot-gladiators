@@ -106,6 +106,9 @@ var startGame = function () {
 	playerInfo.reset();
 
   	for (var i = 0; i < enemyInfo.length; i++) {
+
+      window.alert('Welcome to Battlebots! Round ' + (i + 1));
+      
     // if health > 0  welcome the battle  i++
     if (playerInfo.health > 0 && i < enemyInfo.length - 1) {
       // ask if user wants to use the store before next round
@@ -141,8 +144,22 @@ var startGame = function () {
   //};
 };
 
+// function to set name
+var getPlayerName = function() {
+  var name = "";
+
+  while (name === "" || name ===null) {
+    name = prompt("What is your robot's name?");
+  }
+
+  console.log("Your robot's name is " + name);
+  return name;
+
+  
+}
+
 var playerInfo = {
-	name: window.prompt("What is your robot's name?"),
+	name: getPlayerName(),
 	health: 100,
 	attack: 10,
 	money: 10,
